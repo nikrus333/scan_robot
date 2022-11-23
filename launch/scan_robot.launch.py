@@ -5,21 +5,25 @@ from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
-from launch_ros.substitutions import FindPackageShare
+from launch_ros.substitutions import FindPackageShare, FindPackage
 from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
  
+
+  #pkg = FindPackage(package='scan_robot').find('scan_robot')
+  world_file_name = 'scan_world.world'
+  
+  pkg_scan_robot = os.path.join('world', world_file_name)
+  pkg_scan_robot = '/home/nik/ros2_ws/src/scan_robot/world/scan'
   # Set the path to the Gazebo ROS package
   pkg_gazebo_ros = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
-   
+  
   # Set the path to this package.
   pkg_share = FindPackageShare(package='scan_robot').find('scan_robot')
  
   # Set the path to the world file
-  world_file_name = 'scan_world.world'
-  pkg_scan_robot = '/root/ws/src/scan_robot/world/scan_world'
+  
   world_path = pkg_scan_robot #os.path.join(pkg_share, 'world', world_file_name)
-  print(world_path)
   # Set the path to the SDF model files.
   gazebo_models_path = os.path.join(pkg_share, 'models')
   os.environ["GAZEBO_MODEL_PATH"] = gazebo_models_path
