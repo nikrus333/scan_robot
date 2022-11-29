@@ -126,7 +126,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='camera_model'>
+    <model name='camera'>
       <pose>0 0 0.5 0 -0 3.14</pose>
       <link name='camera_link'>
         <sensor name='camera1' type='depth'>
@@ -182,187 +182,14 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <plugin name="hand_of_god1" filename="libgazebo_ros_hand_of_god.so">
+			  <ka>150</ka>
+			  <kl>150</kl>
+        <frame_id>camera</frame_id>
+			<link_name>camera_link</link_name>
+		    </plugin>
+      
     </model>
-    <model name='Untitled'>
-      <model name='1'>
-        <link name='link_0'>
-          <inertial>
-            <mass>0.000001</mass>
-            <inertia>
-              <ixx>0.166667</ixx>
-              <ixy>0</ixy>
-              <ixz>0</ixz>
-              <iyy>0.166667</iyy>
-              <iyz>0</iyz>
-              <izz>0.166667</izz>
-            </inertia>
-            <pose>0 0 0 0 -0 0</pose>
-          </inertial>
-          <pose>-1.30015 0.08392 0.5 0 -0 0</pose>
-          <visual name='visual'>
-            <pose>0 0 0 0 -0 0</pose>
-            <geometry>
-              <mesh>
-                <uri>/home/nik/ros2_ws/src/scan_robot/models/detal8.stl</uri>
-                <scale>0.0005 0.0005 0.0005</scale>
-              </mesh>
-            </geometry>
-            <material>
-              <lighting>1</lighting>
-              <script>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-                <name>Gazebo/Red</name>
-              </script>
-              <shader type='pixel'/>
-            </material>
-            <transparency>0</transparency>
-            <cast_shadows>1</cast_shadows>
-          </visual>
-          <collision name='collision'>
-            <laser_retro>0</laser_retro>
-            <max_contacts>10</max_contacts>
-            <pose>0 0 0 0 -0 0</pose>
-            <geometry>
-              <mesh>
-                <uri>/home/nik/ros2_ws/src/scan_robot/models/detal8.stl</uri>
-                <scale>0.001 0.001 0.001</scale>
-              </mesh>
-            </geometry>
-            <surface>
-              <friction>
-                <ode>
-                  <mu>1</mu>
-                  <mu2>1</mu2>
-                  <fdir1>0 0 0</fdir1>
-                  <slip1>0</slip1>
-                  <slip2>0</slip2>
-                </ode>
-                <torsional>
-                  <coefficient>1</coefficient>
-                  <patch_radius>0</patch_radius>
-                  <surface_radius>0</surface_radius>
-                  <use_patch_radius>1</use_patch_radius>
-                  <ode>
-                    <slip>0</slip>
-                  </ode>
-                </torsional>
-              </friction>
-              <bounce>
-                <restitution_coefficient>0</restitution_coefficient>
-                <threshold>1e+06</threshold>
-              </bounce>
-              <contact>
-                <collide_without_contact>0</collide_without_contact>
-                <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-                <collide_bitmask>1</collide_bitmask>
-                <ode>
-                  <soft_cfm>0</soft_cfm>
-                  <soft_erp>0.2</soft_erp>
-                  <kp>1e+13</kp>
-                  <kd>1</kd>
-                  <max_vel>0.01</max_vel>
-                  <min_depth>0</min_depth>
-                </ode>
-                <bullet>
-                  <split_impulse>1</split_impulse>
-                  <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                  <soft_cfm>0</soft_cfm>
-                  <soft_erp>0.2</soft_erp>
-                  <kp>1e+13</kp>
-                  <kd>1</kd>
-                </bullet>
-              </contact>
-            </surface>
-          </collision>
-          <self_collide>0</self_collide>
-          <enable_wind>0</enable_wind>
-          <kinematic>0</kinematic>
-        </link>
-        <static>0</static>
-        <allow_auto_disable>1</allow_auto_disable>
-        <pose>-4e-06 0 0 0 -0 0</pose>
-      </model>
-      <static>0</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-4.07051 -0.073082 0 0 -0 0</pose>
-    </model>
-    <state world_name='default'>
-      <sim_time>11 764000000</sim_time>
-      <real_time>5 574916816</real_time>
-      <wall_time>1669218076 505684609</wall_time>
-      <iterations>4242</iterations>
-      <model name='Untitled'>
-        <pose>13.1296 0.480219 -5.7762 3.12622 -0.770204 -3.04237</pose>
-        <scale>1 1 1</scale>
-        <model name='1'>
-          <pose>13.1296 0.480219 -5.7762 3.12622 -0.770204 -3.04237</pose>
-          <scale>1 1 1</scale>
-          <link name='link_0'>
-            <pose>13.7037 0.629418 -7.03939 3.12622 -0.770204 -3.04237</pose>
-            <velocity>-2.20314 -0.046801 -1.89455 -0.039096 0.310931 0.038913</velocity>
-            <acceleration>-5.37242 -0.381571 -3.32471 -0.038417 0.681212 0.008268</acceleration>
-            <wrench>-5.37242 -0.381571 -3.32471 0 -0 0</wrench>
-          </link>
-        </model>
-      </model>
-      <model name='Untitled_0'>
-        <pose>-5.10159 0.111835 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <model name='1'>
-          <pose>-5.10159 0.111835 0 0 -0 0</pose>
-          <scale>1 1 1</scale>
-          <link name='link_0'>
-            <pose>-6.40174 0.195755 0.5 0 -0 0</pose>
-            <velocity>0 0 0 0 -0 0</velocity>
-            <acceleration>0 0 0 0 -0 0</acceleration>
-            <wrench>0 0 0 0 -0 0</wrench>
-          </link>
-        </model>
-      </model>
-      <model name='ball'>
-        <pose>-1 0 0.757222 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-1 0 0.757222 0 -0 0</pose>
-          <velocity>0 0 -2.1952 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.2548 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='camera_model'>
-        <pose>0 0 -677.718 0 -0 3.14</pose>
-        <scale>1 1 1</scale>
-        <link name='camera_link'>
-          <pose>0 0 -677.718 0 -0 3.14</pose>
-          <velocity>0 0 -115.297 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -9.8 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='ground_plane'>
-        <pose>0 0 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0 0 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='my_mesh'>
-        <pose>0 0 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='body'>
-          <pose>0 0 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <light name='sun'>
-        <pose>0 0 10 0 -0 0</pose>
-      </light>
-    </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
         <pose>4.91516 -0.955226 1.73521 0 0.347643 2.7282</pose>
@@ -370,22 +197,13 @@
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <model name='Untitled_0'>
-      <model name='1'>
-        <link name='link_0'>
+    <model name='copter'>
+        <link name='link'>
           <inertial>
             <mass>1</mass>
-            <inertia>
-              <ixx>0.166667</ixx>
-              <ixy>0</ixy>
-              <ixz>0</ixz>
-              <iyy>0.166667</iyy>
-              <iyz>0</iyz>
-              <izz>0.166667</izz>
-            </inertia>
             <pose>0 0 0 0 -0 0</pose>
           </inertial>
-          <pose>-1.30015 0.08392 0.5 0 -0 0</pose>
+          <pose>-0.0 0.0 0.0 0 -0 0</pose>
           <visual name='visual'>
             <pose>0 0 0 0 -0 0</pose>
             <geometry>
@@ -398,7 +216,7 @@
               <lighting>1</lighting>
               <script>
                 <uri>file://media/materials/scripts/gazebo.material</uri>
-                <name>Gazebo/Red</name>
+                <name>Gazebo/Yellow</name>
               </script>
               <shader type='pixel'/>
             </material>
@@ -412,66 +230,23 @@
             <geometry>
               <mesh>
                 <uri>/home/nik/ros2_ws/src/scan_robot/models/detal8.stl</uri>
-                <scale>0.001 0.001 0.001</scale>
+                <scale>0.0005 0.0005 0.0005</scale>
               </mesh>
             </geometry>
-            <surface>
-              <friction>
-                <ode>
-                  <mu>1</mu>
-                  <mu2>1</mu2>
-                  <fdir1>0 0 0</fdir1>
-                  <slip1>0</slip1>
-                  <slip2>0</slip2>
-                </ode>
-                <torsional>
-                  <coefficient>1</coefficient>
-                  <patch_radius>0</patch_radius>
-                  <surface_radius>0</surface_radius>
-                  <use_patch_radius>1</use_patch_radius>
-                  <ode>
-                    <slip>0</slip>
-                  </ode>
-                </torsional>
-              </friction>
-              <bounce>
-                <restitution_coefficient>0</restitution_coefficient>
-                <threshold>1e+06</threshold>
-              </bounce>
-              <contact>
-                <collide_without_contact>0</collide_without_contact>
-                <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-                <collide_bitmask>1</collide_bitmask>
-                <ode>
-                  <soft_cfm>0</soft_cfm>
-                  <soft_erp>0.2</soft_erp>
-                  <kp>1e+13</kp>
-                  <kd>1</kd>
-                  <max_vel>0.01</max_vel>
-                  <min_depth>0</min_depth>
-                </ode>
-                <bullet>
-                  <split_impulse>1</split_impulse>
-                  <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                  <soft_cfm>0</soft_cfm>
-                  <soft_erp>0.2</soft_erp>
-                  <kp>1e+13</kp>
-                  <kd>1</kd>
-                </bullet>
-              </contact>
-            </surface>
           </collision>
           <self_collide>0</self_collide>
           <enable_wind>0</enable_wind>
           <kinematic>0</kinematic>
         </link>
+        <plugin name="hand_of_god" filename="libgazebo_ros_hand_of_god.so">
+			  <ka>150</ka>
+			  <kl>150</kl>
+        <frame_id>copter</frame_id>
+			<link_name>link</link_name>
+		    </plugin>
         <static>0</static>
         <allow_auto_disable>1</allow_auto_disable>
-        <pose>-4e-06 0 0 0 -0 0</pose>
-      </model>
-      <static>0</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-5.10159 0.111835 0 0 -0 0</pose>
+        <pose>-0 0 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
